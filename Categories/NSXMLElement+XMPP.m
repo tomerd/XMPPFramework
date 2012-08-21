@@ -10,13 +10,15 @@
 /**
  * Quick method to create an element
 **/
+/*
 + (NSXMLElement *)elementWithName:(NSString *)name xmlns:(NSString *)ns
 {
 	NSXMLElement *element = [NSXMLElement elementWithName:name];
 	[element setXmlns:ns];
 	return element;
 }
-
+*/
+ 
 - (id)initWithName:(NSString *)name xmlns:(NSString *)ns
 {
 	if ((self = [self initWithName:name]))
@@ -50,6 +52,7 @@
  * This method returns the first child element for the given name (as an NSXMLElement).
  * If no child elements exist for the given name, nil is returned.
 **/
+/*
 - (NSXMLElement *)elementForName:(NSString *)name
 {
 	NSArray *elements = [self elementsForName:name];
@@ -81,11 +84,13 @@
 		return nil;
 	}
 }
+*/
 
 /**
  * This method returns the first child element for the given name and given xmlns (as an NSXMLElement).
  * If no child elements exist for the given name and given xmlns, nil is returned.
 **/
+/*
 - (NSXMLElement *)elementForName:(NSString *)name xmlns:(NSString *)xmlns
 {
 	NSArray *elements = [self elementsForLocalName:name URI:xmlns];
@@ -98,16 +103,20 @@
 		return nil;
 	}
 }
+*/
 
 /**
  * Returns the common xmlns "attribute", which is only accessible via the namespace methods.
  * The xmlns value is often used in jabber elements.
 **/
+/*
 - (NSString *)xmlns
 {
 	return [[self namespaceForPrefix:@""] stringValue];
 }
+*/
 
+/*
 - (void)setXmlns:(NSString *)ns
 {
 	// If we use setURI: then the xmlns won't be displayed in the XMLString.
@@ -115,30 +124,37 @@
 	
 	[self addNamespace:[NSXMLNode namespaceWithName:@"" stringValue:ns]];
 }
+*/
 
 /**
  * Shortcut to get a pretty (formatted) string representation of the element.
 **/
+/*
 - (NSString *)prettyXMLString
 {
 	return [self XMLStringWithOptions:(NSXMLNodePrettyPrint | NSXMLNodeCompactEmptyElement)];
 }
+*/
 
 /**
  * Shortcut to get a compact string representation of the element.
 **/
+/*
 - (NSString *)compactXMLString
 {
     return [self XMLStringWithOptions:NSXMLNodeCompactEmptyElement];
 }
+*/
 
 /**
  *	Shortcut to avoid having to use NSXMLNode everytime
 **/
+/*
 - (void)addAttributeWithName:(NSString *)name stringValue:(NSString *)string
 {
 	[self addAttribute:[NSXMLNode attributeWithName:name stringValue:string]];
 }
+*/
 
 /**
  * The following methods return the corresponding value of the attribute with the given name.
@@ -283,6 +299,7 @@
 /**
  * Returns all the attributes in a dictionary.
 **/
+/*
 - (NSMutableDictionary *)attributesAsDictionary
 {
 	NSArray *attributes = [self attributes];
@@ -297,6 +314,7 @@
 	}
 	return result;
 }
+*/
 
 /**
  * The following methods return the corresponding value of the node.
